@@ -1,0 +1,58 @@
+﻿@using Bookshop.Services.Authors
+@using Bookshop.Web.Models.InputModels;
+@model AddBookInputModel
+@inject IAuthorsService authorsServices
+
+@{
+    int marginBetweenFormParts = 4; 
+    int marginBetweenLableAndInput = 2;
+    ViewBag.AuthorsNamesSelectList = authorsServices.GetAllAuthorsNames()
+                .Select(x => new SelectListItem
+                        {
+                            Text = x,
+                            Value = x,
+                        });
+}
+
+<form enctype="multipart/form-data" method="post">
+    <div class="form-group mb-@marginBetweenFormParts">
+        <label asp-for=Title class="mb-@marginBetweenLableAndInput"></label>
+        <input asp-for=Title class="form-control" placeholder="Title..."/>
+        <span asp-validation-for=Title class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-@marginBetweenFormParts">
+        <label asp-for=AuthorsNames class="mb-@marginBetweenLableAndInput"></label>
+        <select asp-for=AuthorsNames 
+            asp-items=@(new SelectList(ViewBag.AuthorsNamesSelectList, "Value", "Text")) 
+            class="form-control">
+            <option value = "@null" selected>Select author</option>
+        </select>
+        
+        
+        <span asp-validation-for=AuthorsNames class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-@marginBetweenFormParts">
+        <label asp-for=PublishedOn class="mb-@marginBetweenLableAndInput"></label>
+        <input asp-for=PublishedOn class="form-control"/>
+        <span asp-validation-for=PublishedOn class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-@marginBetweenFormParts">
+        <label asp-for=Pages class="mb-@marginBetweenLableAndInput"></label>
+        <input asp-for=Pages class="form-control" placeholder="Pages Count"/>
+        <span asp-validation-for=Pages class="text-danger"></span>
+
+    </div>
+     <div class="form-group mb-@marginBetweenFormParts">
+        <label asp-for=Image class="mb-@marginBetweenLableAndInput"></label>
+        <input asp-for=Image class="form-control custom-file-input"/>
+        <span asp-validation-for=Image class="text-danger"></span>
+    </div>
+    <br/>
+
+    <div asp-validation-summary=ModelOnly class="text-danger"></div>
+
+    <input type="submit" class="btn btn-primary" />
+</form>

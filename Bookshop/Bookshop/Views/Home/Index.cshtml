@@ -1,0 +1,14 @@
+﻿@using Bookshop.Web.Models.InputModels;
+@model AddAuthorInputModel
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+</div>
+
+<form method="post">
+    <label asp-for=AuthorName class="mb-2"></label>
+    <input asp-for=AuthorName class="form-control" placeholder="Name..."/>
+    <span asp-validation-for=AuthorName class="text-danger"></span>
+
+    <input type="submit" class="btn btn-primary mt-4" />
+</form>
