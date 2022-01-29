@@ -18,9 +18,17 @@
 ## How to start application
 
 ### First apply migrations 
-- Open solution explorer
+- Open solution explorer --> (right click)Bookshop.Data --> Open in Terminal
+![Solution Explorer](https://github.com/Alexxx2207/ASP.NET_CORE_MVC_Training/blob/main/Bookshop/ReadMeImages/SolutionExplorer.png "Solution Explorer")
 
-![Solution Explorer](https://github.com/Alexxx2207/ASP.NET_CORE_MVC_Training/blob/main/Bookshop/ReadMeImages/SolutionExplorer.jpg)
+- Write the command in the red rectangle --> expect the result in green
+- ![PowerShell](https://github.com/Alexxx2207/ASP.NET_CORE_MVC_Training/blob/main/Bookshop/ReadMeImages/PowerShell.png "PowerShell")
+
+> :warning: If the result in the PowerShell is not the same, check your connection string. Is it available? Read the red error you will receive in the PowerShell.
+
+## :warning: Important notes :warning:
+- The model binding provider will invoke custom model binder on Pages propertyokInputModel. The explicit input of the ModelBinder Attribute isn't necessary.
+- Also the custom model binder will add 2 to the pages inserted in adding book form.
 
 
 
