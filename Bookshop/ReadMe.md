@@ -1,4 +1,4 @@
-# Web application for adding and listing books from database.
+# Web application for adding to and listing from database books and authors.
 
 ## Application structure
 
