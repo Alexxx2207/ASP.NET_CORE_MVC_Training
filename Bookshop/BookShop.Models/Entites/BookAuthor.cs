@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BookShop.Models
+namespace BookShop.Models.Entities
 {
     public class BookAuthor
     {
