@@ -11,7 +11,7 @@
 - Bookshop.Web - defines MVC project. Contains views, input models, controllers, static files, middlewares definition, DI container definition and configuration files.
 
 ## About database connection
-#### Set connection string for the db in appsettings.json/appsettings.Development.json in Bookshop.Web subproject
+#### Set connection string for the database in appsettings.json/appsettings.Development.json in Bookshop.Web subproject
 
 > :warning: The connection string from the appsettings.Development.json in Bookshop.Data is your connection string for the database. It should be the same with the one in appsettings.json/appsettings.Development.json in Bookshop.Web subproject.
 
@@ -20,7 +20,7 @@
 ### First apply migrations 
 - Open solution explorer
 
-![Solution Explorer] (/ReadMeImages/SolutionExplorer.jpg)
+![Solution Explorer](https://github.com/Alexxx2207/ASP.NET_CORE_MVC_Training/blob/main/Bookshop/ReadMeImages/SolutionExplorer.jpg)
 
 
 
