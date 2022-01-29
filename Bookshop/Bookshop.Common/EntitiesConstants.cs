@@ -12,6 +12,6 @@ namespace Bookshop.Common
 
         public const int AUTHOR_NAME_MAX_LENGTH = 100;
 
-        public const double MAX_SIZE_ALLOWED = 1024 * 1024 * 1;
+        public const double MAX_SIZE_ALLOWED = 1024 * 1024 * 5;
     }
 }

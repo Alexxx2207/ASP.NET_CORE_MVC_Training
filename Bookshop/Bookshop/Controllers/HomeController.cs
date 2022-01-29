@@ -29,9 +29,16 @@ namespace Bookshop.Controllers
             {
                 return View();
             }
+
             authorsService.AddAuthor(name.AuthorName);
 
-            return View();
+            return Redirect($"SuccessPage/{name.AuthorName}");
+        }
+
+        [Route("SuccessPage/{name}")]
+        public IActionResult SuccessPage([FromRoute]string name)
+        { 
+            return View("SuccessPage", name);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

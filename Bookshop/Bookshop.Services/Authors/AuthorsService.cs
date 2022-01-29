@@ -1,5 +1,7 @@
 ﻿using Bookshop.Data;
+using Bookshop.Models.DTO;
 using BookShop.Models;
+using BookShop.Models.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,20 +18,20 @@ namespace Bookshop.Services.Authors
             dbContext = applicationDbContext;
         }
 
-        public void AddAuthor(string name)
+        public async Task AddAuthor(string name)
         {
             Author author = new Author()
             {
                 FullName = name,
                 Guid = Guid.NewGuid().ToString(),
             };
-            dbContext.Authors.Add(author);
-            dbContext.SaveChanges();
+            await dbContext.Authors.AddAsync(author);
+            await dbContext.SaveChangesAsync();
         }
 
-        public IEnumerable<string> GetAllAuthorsNames()
+        public async Task<IEnumerable<AuthorGuidNameViewModelDTO>> GetAllAuthorsNames()
         {
-            return dbContext.Authors.Select(a => a.FullName).ToList();
+            return await Task.Run(() => dbContext.Authors.ToList().Select(a => new AuthorGuidNameViewModelDTO { Guid = a.Guid, Name = a.FullName }));
 
         }
     }

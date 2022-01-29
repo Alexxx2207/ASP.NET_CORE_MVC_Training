@@ -1,6 +1,8 @@
 using Bookshop.Data;
 using Bookshop.Services.Authors;
+using Bookshop.Services.Books;
 using Bookshop.Web.ModelBinderProviders;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,6 +20,8 @@ builder.Services.AddControllersWithViews(options =>
 }
 );
 builder.Services.AddTransient<IAuthorsService, AuthorsService>();
+builder.Services.AddTransient<IBooksService, BooksService>();
+builder.Services.AddSingleton<IWebHostEnvironment>(builder.Environment);
 
 
 var app = builder.Build();

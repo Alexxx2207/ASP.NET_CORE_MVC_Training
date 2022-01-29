@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bookshop.Models.DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,8 +9,8 @@ namespace Bookshop.Services.Authors
 {
     public interface IAuthorsService
     {
-        IEnumerable<string> GetAllAuthorsNames();
+        Task<IEnumerable<AuthorGuidNameViewModelDTO>> GetAllAuthorsNames();
 
-        void AddAuthor(string name);
+        Task AddAuthor(string name);
     }
 }

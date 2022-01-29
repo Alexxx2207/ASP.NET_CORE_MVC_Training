@@ -15,7 +15,7 @@ namespace Bookshop.Web.Models.InputModels
 
         [Display(Name = "Author Name")]
         [Required(ErrorMessage = "Author is required!")]
-        public string AuthorsNames { get; set; }
+        public IEnumerable<string> AuthorsNames { get; set; }
 
         [DataType(DataType.Date)]
         [Display(Name = "Published On")]
@@ -23,13 +23,14 @@ namespace Bookshop.Web.Models.InputModels
         public DateTime? PublishedOn { get; set; }
 
         [Required(ErrorMessage = "Pages are required!")]
+        [Display(Name = "Pages (+ 2 pages will be added, because of custom model binder)")]
         //[ModelBinder(typeof(BooksPagesModelBinder))]
         // ^^^^^^ WE CAN REMOVE THIS ATTRIBUTE BECAUSE
         // |||||| WE HAVE REGISTERED A MODEL BINDING PROVIDER
         // |||||| FOR THIS CUSTOM MODEL BINDER
         public int? Pages { get; set; }
 
-        [AllowedExtensions(new string[] { ".jpg", ".jpeg", ".png" })]
+        [AllowedExtensions(new string[] { ".jpg", ".jpeg", ".png", ".jfif" })]
         [MaxFileSize(EntitiesConstants.MAX_SIZE_ALLOWED)]
         public IFormFile? Image { get; set; }
 

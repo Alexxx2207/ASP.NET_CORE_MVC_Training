@@ -15,7 +15,7 @@ namespace Bookshop.Infrastructure.ModelBinders.BooksModelBinders
 
             if (int.TryParse(value, out int pages))
             {
-                pages *= 10; 
+                pages += 2; 
                 bindingContext.Result = ModelBindingResult.Success(pages);
             }
             else
