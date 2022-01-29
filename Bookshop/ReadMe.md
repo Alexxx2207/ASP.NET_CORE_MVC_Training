@@ -15,7 +15,7 @@
 
 > :warning: The connection string from the appsettings.Development.json in Bookshop.Data is your connection string for the database. It should be the same with the one in appsettings.json/appsettings.Development.json in Bookshop.Web subproject.
 
-## How to start application
+## How to start the application
 
 ### First apply migrations 
 - Open solution explorer --> (right click)Bookshop.Data --> Open in Terminal
